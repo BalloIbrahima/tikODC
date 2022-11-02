@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tikodc/forgetPassword.dart';
 
+import 'home.dart';
+
 class loginPhonePage extends StatefulWidget {
   final String title;
 
@@ -169,7 +171,11 @@ class _loginPhonePage extends State<loginPhonePage> {
                             height: 50.0,
                             margin: const EdgeInsets.only(top: 10),
                             child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) =>
+                                        const Acceuilpage(title: 'home')));
+                              },
                               style: ButtonStyle(
                                   backgroundColor:
                                       MaterialStateProperty.all(Colors.black)),

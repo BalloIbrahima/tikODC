@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tikodc/home.dart';
 import 'package:tikodc/inscription.dart';
 
 class InscriptionPassword extends StatefulWidget {
@@ -81,7 +82,11 @@ class _InscriptionPassword extends State<InscriptionPassword> {
                     height: 50.0,
                     margin: const EdgeInsets.only(top: 10),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) =>
+                                const Acceuilpage(title: 'home')));
+                      },
                       style: ButtonStyle(
                           backgroundColor:
                               MaterialStateProperty.all(Colors.black)),
