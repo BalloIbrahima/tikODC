@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tikodc/forgetPassword.dart';
 
-import 'home.dart';
+import 'Home/home.dart';
 
 class loginPhonePage extends StatefulWidget {
   final String title;

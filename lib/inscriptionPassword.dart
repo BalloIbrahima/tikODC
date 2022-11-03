@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tikodc/home.dart';
+import 'package:tikodc/Home/home.dart';
 import 'package:tikodc/inscription.dart';
 
 class InscriptionPassword extends StatefulWidget {

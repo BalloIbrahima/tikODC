@@ -83,7 +83,7 @@ class _forgetPasswordPage extends State<forgetPasswordPage> {
                       onPressed: () {},
                       style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all(
-                              Color.fromARGB(255, 218, 25, 25))),
+                              const Color.fromARGB(255, 218, 25, 25))),
                       child: const Text('Réinitialiser'),
                     ),
                   )
