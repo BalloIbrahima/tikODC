@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tikodc/Home/Accueil.dart';
@@ -83,12 +84,22 @@ class _acceuilpage extends State<Acceuilpage> {
 
   void changePage(int index) {
     if (index == 2) {
-      Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => NewPublication()));
+      _openCamera(context);
+      // Navigator.of(context)
+      //     .push(MaterialPageRoute(builder: (context) => NewPublication()));
     } else {
       setState(() {
         IndexPage = index;
       });
     }
+  }
+
+  ///appareil
+  void _openCamera(context) {
+    showModalBottomSheet(
+        context: (context),
+        builder: (BuildContext bc) {
+          return NewPublication();
+        });
   }
 }

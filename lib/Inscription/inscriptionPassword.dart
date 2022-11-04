@@ -36,7 +36,7 @@ class _InscriptionPassword extends State<InscriptionPassword> {
                 child: Row(
                   children: const [
                     Text(
-                      'Adresse mail',
+                      'Pseudo',
                       style: TextStyle(fontWeight: FontWeight.bold),
                     )
                   ],
@@ -46,7 +46,7 @@ class _InscriptionPassword extends State<InscriptionPassword> {
                 keyboardType: TextInputType.emailAddress,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Veuillez saisir une adresse mail !';
+                    return 'Veuillez saisir un pseudo !';
                   }
                   return null;
                 },
@@ -70,6 +70,29 @@ class _InscriptionPassword extends State<InscriptionPassword> {
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Veuillez saisir le mot de passe !';
+                  }
+                  return null;
+                },
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.7,
+                child: Row(
+                  children: const [
+                    Padding(
+                      padding: EdgeInsets.only(top: 15),
+                      child: Text(
+                        'Confirmation du mot de passe',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              TextFormField(
+                keyboardType: TextInputType.visiblePassword,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Veuillez resaisir le mot de passe !';
                   }
                   return null;
                 },

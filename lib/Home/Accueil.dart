@@ -120,25 +120,52 @@ class _MonAcceuil extends State<MonAcceuil> {
                         child: Column(children: [
                           Container(
                             height: 100,
-                            padding: EdgeInsets.only(top: 40),
+                            padding: const EdgeInsets.only(top: 40),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
-                              children: const [
-                                Text(
+                              children: [
+                                Positioned(
+                                    left: 0,
+                                    child: Row(
+                                      children: const [
+                                        SizedBox(
+                                            width: 50,
+                                            height: 50,
+                                            child: Icon(
+                                              Icons.live_tv,
+                                              color: Colors.white,
+                                            )),
+                                      ],
+                                    )),
+                                const SizedBox(width: 60),
+                                const Text(
                                   'Suivis',
                                   style: TextStyle(
                                     color: Colors.white54,
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
-                                SizedBox(width: 20),
-                                Text(
+                                const SizedBox(width: 20),
+                                const Text(
                                   'Pour toi',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
+                                const SizedBox(width: 60),
+                                Positioned(
+                                    right: 0,
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: const [
+                                        Icon(
+                                          Icons.search,
+                                          color: Colors.white,
+                                        ),
+                                      ],
+                                    ))
                               ],
                             ),
                           ),

@@ -3,10 +3,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tikodc/Inscription/inscription.dart';
 import 'package:tikodc/loginPhoneEmail.dart';
 
-void main() {
+void main() async {
   // WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   // FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
-
+  await Future.delayed(const Duration(milliseconds: 500));
   runApp(const MyApp());
 }
 

@@ -15,12 +15,14 @@ class _VideoWidget extends State<VideoWidget> {
 
   _VideoWidget(this.videoUrl);
 
+  bool islecture = true;
+
   @override
   void initState() {
     super.initState();
     _controller = VideoPlayerController.asset(videoUrl)
       ..initialize().then((_) {
-        _controller.setLooping(true);
+        _controller.setLooping(false);
         _controller.play();
         setState(() {});
       });
@@ -29,6 +31,22 @@ class _VideoWidget extends State<VideoWidget> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return VideoPlayer(_controller);
+    return InkWell(
+      onTap: () {
+        if (islecture == true) {
+          _controller.pause();
+          islecture = !islecture;
+        } else {
+          _controller.play();
+          islecture = !islecture;
+        }
+        setState(() {});
+      },
+      child: SizedBox(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        child: VideoPlayer(_controller),
+      ),
+    );
   }
 }

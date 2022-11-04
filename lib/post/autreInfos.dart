@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 class AutresInfosdelaPub extends StatefulWidget {
   final Map user;
   final Map infos;
@@ -143,11 +145,15 @@ class _AutresInfosdelaPub extends State<AutresInfosdelaPub> {
                         height: 80,
                         child: Column(
                           children: [
-                            Icon(
-                              Icons.share,
-                              color: Colors.white.withOpacity(0.85),
-                              size: 45,
+                            const FaIcon(
+                              FontAwesomeIcons.share,
+                              color: Colors.white,
                             ),
+                            // Icon(
+                            //   Icons.share,
+                            //   color: Colors.white.withOpacity(0.85),
+                            //   size: 45,
+                            // ),
                             Text(
                               '${widget.infos['partages']}',
                               style: const TextStyle(
