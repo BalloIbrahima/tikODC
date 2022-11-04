@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:tikodc/inscriptionPhoneEmail.dart';
+import 'package:tikodc/Inscription/inscriptionPhoneEmail.dart';
 import 'package:tikodc/main.dart';
 
 class inscriptionPage extends StatefulWidget {
@@ -21,7 +21,8 @@ class _inscriptionPage extends State<inscriptionPage> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) { 
+    
     double LongueurEcran = MediaQuery.of(context).size.height;
     double LargeurEcran = MediaQuery.of(context).size.width;
     // TODO: implement build

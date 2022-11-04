@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tikodc/inscriptionPassword.dart';
+import 'package:tikodc/Inscription/inscriptionPassword.dart';
 
 class inscriptionPhoneEmailPage extends StatefulWidget {
   final String title;

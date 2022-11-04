@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:tikodc/inscription.dart';
+import 'package:tikodc/Inscription/inscription.dart';
 import 'package:tikodc/loginPhoneEmail.dart';
 
 void main() {
@@ -19,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Tik ODC',
+      title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -53,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
     print('ready in 1...');
     await Future.delayed(const Duration(seconds: 1));
     print('go!');
-    FlutterNativeSplash.remove();
+    //FlutterNativeSplash.remove();
   }
 
   @override

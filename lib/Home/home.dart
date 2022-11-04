@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tikodc/Home/Accueil.dart';
 import 'package:tikodc/Home/monCompte.dart';
+import 'package:tikodc/Home/newPublication.dart';
 import 'package:tikodc/Home/notification.dart';
 import 'package:tikodc/Home/now.dart';
-import 'package:video_player/video_player.dart';
 
 class Acceuilpage extends StatefulWidget {
   final String title;
@@ -34,32 +33,38 @@ class _acceuilpage extends State<Acceuilpage> {
           type: BottomNavigationBarType.fixed,
           showSelectedLabels: false,
           currentIndex: IndexPage,
-          unselectedItemColor: const Color.fromARGB(255, 98, 102, 98),
+          selectedItemColor: Colors.white,
+          unselectedItemColor: Color.fromARGB(255, 255, 255, 255),
           onTap: (int index) => {changePage(index)},
           items: <BottomNavigationBarItem>[
             const BottomNavigationBarItem(
-                icon: Icon(Icons.home_outlined),
+                icon: Icon(Icons.house),
                 label: 'Acceuil',
-                activeIcon: Icon(Icons.home)),
-            const BottomNavigationBarItem(
-                icon: Icon(Icons.flash_on_outlined),
+                activeIcon: FaIcon(FontAwesomeIcons.houseChimney)),
+            BottomNavigationBarItem(
+                icon: Image.asset(
+                  'assets/images/flash-24.png',
+                  height: 25,
+                ),
                 label: 'Now',
-                activeIcon: Icon(Icons.flash_on_sharp)),
+                activeIcon: const FaIcon(FontAwesomeIcons.boltLightning)),
             BottomNavigationBarItem(
                 icon: Image.asset(
                   'assets/images/tiktok_add.webp',
-                  height: 20,
+                  height: 25,
                 ),
                 label: ''),
             const BottomNavigationBarItem(
                 icon: FaIcon(FontAwesomeIcons.message),
+                activeIcon: FaIcon(FontAwesomeIcons.solidMessage),
                 label: 'Boite de reception'),
             const BottomNavigationBarItem(
-                icon: FaIcon(FontAwesomeIcons.user), label: 'Profil')
+                icon: FaIcon(FontAwesomeIcons.user),
+                label: 'Profil',
+                activeIcon: FaIcon(FontAwesomeIcons.solidUser))
           ]),
     );
   }
-
 
   Widget recupererPage() {
     if (IndexPage == 0) {
@@ -68,19 +73,22 @@ class _acceuilpage extends State<Acceuilpage> {
       return Now;
     } else if (IndexPage == 3) {
       return Notification;
-    } else {
+    } else if (IndexPage == 4) {
       return Compte;
+    } else {
+      IndexPage = 0;
+      return Acceuil;
     }
   }
 
-
   void changePage(int index) {
     if (index == 2) {
-      Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => const Acceuilpage(title: 'home')));
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => NewPublication()));
+    } else {
+      setState(() {
+        IndexPage = index;
+      });
     }
-    setState(() {
-      IndexPage = index;
-    });
   }
 }
