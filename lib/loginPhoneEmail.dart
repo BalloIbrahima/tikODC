@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:tikodc/forgetPassword.dart';
 
 import 'Home/home.dart';
+import 'Inscription/otpVerification.dart';
 
 class loginPhonePage extends StatefulWidget {
   final String title;
@@ -15,6 +16,7 @@ class loginPhonePage extends StatefulWidget {
 
 class _loginPhonePage extends State<loginPhonePage> {
   final _formKey = GlobalKey<FormState>();
+  var numeroTelephone = '';
 
   @override
   void initState() {
@@ -66,6 +68,9 @@ class _loginPhonePage extends State<loginPhonePage> {
                         ),
                       ),
                       TextFormField(
+                        onChanged: (value) {
+                          numeroTelephone = value;
+                        },
                         keyboardType: TextInputType.phone,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
@@ -82,7 +87,9 @@ class _loginPhonePage extends State<loginPhonePage> {
                             height: 50.0,
                             margin: const EdgeInsets.only(top: 10),
                             child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                _openOtp(context, numeroTelephone);
+                              },
                               style: ButtonStyle(
                                   backgroundColor:
                                       MaterialStateProperty.all(Colors.black)),
@@ -194,6 +201,20 @@ class _loginPhonePage extends State<loginPhonePage> {
       );
 }
 
+void _openOtp(context, numero) {
+  showModalBottomSheet(
+      isScrollControlled: true,
+      context: (context),
+      builder: (BuildContext bc) {
+        return Scaffold(
+          body: Container(
+            height: MediaQuery.of(context).size.height * .80,
+            width: MediaQuery.of(context).size.width,
+            child: OtpVerificationPage(numeroTelephone: numero),
+          ),
+        );
+      });
+}
 //otp
 // class otpLogin extends StatefulWidget {
 //   @override

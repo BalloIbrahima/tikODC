@@ -15,6 +15,20 @@ class MonAcceuil extends StatefulWidget {
 class _MonAcceuil extends State<MonAcceuil> {
   List<Map> tikOdcItems = [
     {
+      'couleur': Colors.red,
+      'titre': 'third',
+      'video': 'assets/videos/video_3.mp4',
+      'infos': {
+        'artiste': 'Dr Keb',
+        'like': '123.0K',
+        'commentaires': '2.0K',
+        'partages': '1.0K',
+        'description':
+            'Où sont les swagueurs du monde 🌍 ?@Gaibshone @mamaanane2 #lesfreressy #tiktokmali🇲🇱223'
+      },
+      'user': {'pseudo': 'Sekou234', 'nom': 'Kone', 'prenom': 'Sekou'}
+    },
+    {
       'couleur': Colors.green,
       'titre': 'first',
       'video': 'assets/videos/video_1.mp4',
@@ -41,20 +55,6 @@ class _MonAcceuil extends State<MonAcceuil> {
             '22 Septembre a Markala #malienden223 #malienne223🇲🇱🥰❤️ #bamakomali🇲🇱 #its_inohzy #malienden223segou #segoukaden #malienne🇲🇱❤️❤️ #malienne🇲🇱'
       },
       'user': {'pseudo': 'Adama3', 'nom': 'Traore', 'prenom': 'Adama'}
-    },
-    {
-      'couleur': Colors.red,
-      'titre': 'third',
-      'video': 'assets/videos/video_3.mp4',
-      'infos': {
-        'artiste': 'Dr Keb',
-        'like': '123.0K',
-        'commentaires': '2.0K',
-        'partages': '1.0K',
-        'description':
-            'Où sont les swagueurs du monde 🌍 ?@Gaibshone @mamaanane2 #lesfreressy #tiktokmali🇲🇱223'
-      },
-      'user': {'pseudo': 'Sekou234', 'nom': 'Kone', 'prenom': 'Sekou'}
     },
     {
       'couleur': Colors.blue,

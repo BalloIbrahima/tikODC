@@ -125,13 +125,38 @@ class _AutresInfosdelaPub extends State<AutresInfosdelaPub> {
                         height: 80,
                         child: Column(
                           children: [
+                            const FaIcon(
+                              FontAwesomeIcons.solidComment,
+                              color: Colors.white,
+                              size: 45,
+                            ),
+                            // Icon(
+                            //   Icons.comment,
+                            //   color: Colors.white.withOpacity(0.85),
+                            //   size: 45,
+                            // ),
+                            Text(
+                              '${widget.infos['commentaires']}',
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 12,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      Container(
+                        height: 80,
+                        child: Column(
+                          children: [
                             Icon(
-                              Icons.comment,
+                              Icons.bookmark,
                               color: Colors.white.withOpacity(0.85),
                               size: 45,
                             ),
                             Text(
-                              '${widget.infos['commentaires']}',
+                              '${widget.infos['like']}',
                               style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 12,
@@ -148,6 +173,7 @@ class _AutresInfosdelaPub extends State<AutresInfosdelaPub> {
                             const FaIcon(
                               FontAwesomeIcons.share,
                               color: Colors.white,
+                              size: 45,
                             ),
                             // Icon(
                             //   Icons.share,

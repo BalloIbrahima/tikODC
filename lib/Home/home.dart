@@ -93,13 +93,20 @@ class _acceuilpage extends State<Acceuilpage> {
       });
     }
   }
+}
 
-  ///appareil
-  void _openCamera(context) {
-    showModalBottomSheet(
-        context: (context),
-        builder: (BuildContext bc) {
-          return NewPublication();
-        });
-  }
+///appareil
+void _openCamera(context) {
+  showModalBottomSheet(
+      isScrollControlled: true,
+      context: (context),
+      builder: (BuildContext bc) {
+        return Scaffold(
+          body: Container(
+            height: MediaQuery.of(context).size.height * .90,
+            width: MediaQuery.of(context).size.width,
+            child: NewPublication(),
+          ),
+        );
+      });
 }

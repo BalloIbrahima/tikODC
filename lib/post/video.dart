@@ -29,6 +29,13 @@ class _VideoWidget extends State<VideoWidget> {
   }
 
   @override
+  void dispose() {
+    // TODO: implement dispose
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return InkWell(

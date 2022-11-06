@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tikodc/Inscription/inscriptionPassword.dart';
 
+import 'otpVerification.dart';
+
 class inscriptionPhoneEmailPage extends StatefulWidget {
   final String title;
 
@@ -12,6 +14,8 @@ class inscriptionPhoneEmailPage extends StatefulWidget {
 }
 
 class _inscriptionPhoneEmailPage extends State<inscriptionPhoneEmailPage> {
+  var numeroTelephone = '';
+
   @override
   void initState() {
     // TODO: implement initState
@@ -62,6 +66,9 @@ class _inscriptionPhoneEmailPage extends State<inscriptionPhoneEmailPage> {
                         ),
                       ),
                       TextFormField(
+                        onChanged: (value) {
+                          numeroTelephone = value;
+                        },
                         keyboardType: TextInputType.phone,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
@@ -78,7 +85,9 @@ class _inscriptionPhoneEmailPage extends State<inscriptionPhoneEmailPage> {
                             height: 50.0,
                             margin: const EdgeInsets.only(top: 10),
                             child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                _openOtp(context, numeroTelephone);
+                              },
                               style: ButtonStyle(
                                   backgroundColor:
                                       MaterialStateProperty.all(Colors.black)),
@@ -114,6 +123,7 @@ class _inscriptionPhoneEmailPage extends State<inscriptionPhoneEmailPage> {
                           if (value == null || value.isEmpty) {
                             return 'Veuillez saisir une adresse mail !';
                           }
+
                           return null;
                         },
                       ),
@@ -127,9 +137,8 @@ class _inscriptionPhoneEmailPage extends State<inscriptionPhoneEmailPage> {
                             child: ElevatedButton(
                               onPressed: () {
                                 Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) =>
-                                      InscriptionPassword(
-                                      title: 'inscription')));
+                                    builder: (context) => InscriptionPassword(
+                                        title: 'inscription')));
                               },
                               style: ButtonStyle(
                                   backgroundColor:
@@ -147,4 +156,20 @@ class _inscriptionPhoneEmailPage extends State<inscriptionPhoneEmailPage> {
           ),
         ),
       );
+}
+
+///otpVerification Modal
+void _openOtp(context, numero) {
+  showModalBottomSheet(
+      isScrollControlled: true,
+      context: (context),
+      builder: (BuildContext bc) {
+        return Scaffold(
+          body: Container(
+            height: MediaQuery.of(context).size.height * .80,
+            width: MediaQuery.of(context).size.width,
+            child: OtpVerificationPage(numeroTelephone: numero),
+          ),
+        );
+      });
 }

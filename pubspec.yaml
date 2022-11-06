@@ -42,6 +42,7 @@ dependencies:
   carousel_slider: ^4.1.1
   typicons_flutter: ^0.5.0
   flutter_launcher_icons: ^0.10.0
+  pin_code_fields: ^7.4.0
 
 
 flutter_native_splash:
